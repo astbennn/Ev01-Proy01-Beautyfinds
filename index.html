@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Finds - Tu espacio de cuidado personal</title>
+
+<style>
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #343832;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* BARRA SUPERIOR */
+.anuncio {
+    background-color: #858D7C;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* ENCABEZADO Y MENU */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EEEEEA;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    color: #343832;
+}
+
+.logo span {
+    color: #A58B74;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #A58B74;
+}
+
+.iconos {
+    display: flex;
+    gap: 18px;
+    font-size: 20px;
+}
+
+/* BANNER PRINCIPAL */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F5F1E9;
+    padding: 65px 9%;
+    gap: 40px;
+}
+
+.banner-texto {
+    flex: 1;
+}
+
+.banner-texto p {
+    color: #A58B74;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.banner-texto h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.banner-texto .descripcion {
+    color: #73766F;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 420px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #858D7C;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.boton:hover {
+    background-color: #626B5B;
+}
+
+.banner-imagen {
+    flex: 1;
+}
+
+.banner-imagen img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* CATEGORIAS */
+.seccion {
+    padding: 65px 7%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-seccion p {
+    color: #A58B74;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.titulo-seccion h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.categoria {
+    flex: 1;
+    min-width: 200px;
+    max-width: 270px;
+    background-color: #F5F1E9;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 5px;
+}
+
+.categoria h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.categoria p {
+    color: #777B73;
+    font-size: 13px;
+}
+
+/* TARJETAS DE PRODUCTOS */
+.productos {
+    background-color: #FAF9F6;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background-color: white;
+    width: 250px;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.tarjeta-info {
+    padding: 18px;
+}
+
+.etiqueta {
+    color: #A58B74;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.tarjeta .detalle {
+    color: #777B73;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 40px;
+}
+
+.precio {
+    font-weight: bold;
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+.boton-tarjeta {
+    display: block;
+    text-align: center;
+    background-color: #C8D0C0;
+    color: #343832;
+    padding: 11px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.boton-tarjeta:hover {
+    background-color: #AEB9A6;
+}
+
+/* SECCION EDUCATIVA */
+.guias {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    background-color: #F5F1E9;
+}
+
+.guias-imagen {
+    flex: 1;
+}
+
+.guias-imagen img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.guias-texto {
+    flex: 1;
+}
+
+.guias-texto p {
+    color: #A58B74;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.guias-texto h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: normal;
+    line-height: 1.3;
+    margin-bottom: 18px;
+}
+
+.guias-texto .descripcion {
+    color: #73766F;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* PIE DE PAGINA */
+footer {
+    background-color: #343832;
+    color: white;
+    padding: 45px 7%;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-columna h3 {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.footer-columna p,
+.footer-columna a {
+    display: block;
+    color: #D5D5CE;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.footer-final {
+    text-align: center;
+    border-top: 1px solid #62665E;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #D5D5CE;
+    font-size: 12px;
+}
+
+/* ADAPTACION A CELULARES */
+@media (max-width: 750px) {
+    header {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .banner {
+        flex-direction: column;
+        padding: 40px 7%;
+    }
+
+    .banner-texto h1 {
+        font-size: 36px;
+    }
+
+    .banner-imagen img {
+        height: 260px;
+    }
+
+    .guias {
+        flex-direction: column;
+    }
+
+    .guias-texto h2 {
+        font-size: 28px;
+    }
+
+    .tarjeta {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BARRA DE ANUNCIO -->
+<div class="anuncio">
+    DESCUBRE NUEVOS PRODUCTOS PARA TU RUTINA DE CUIDADO
+</div>
+
+<!-- ENCABEZADO -->
+<header>
+    <div class="logo">Beauty <span>Finds.</span></div>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#productos">Tienda</a>
+        <a href="#guias">Guías de cuidado</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="iconos">
+        <span>⌕</span>
+        <span>♡</span>
+        <span>🛍</span>
+    </div>
+</header>
+
+<!-- BANNER PRINCIPAL -->
+<section class="banner">
+
+    <div class="banner-texto">
+        <p>BIENVENIDA A BEAUTY FINDS</p>
+
+        <h1>Encuentra tu forma de cuidarte</h1>
+
+        <div class="descripcion">
+            Descubre productos de cuidado personal de
+            diferentes marcas y encuentra los favoritos
+            para tu rutina diaria.
+        </div>
+
+        <a href="#productos" class="boton">Explorar productos</a>
+    </div>
+
+    <div class="banner-imagen">
+        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900"
+        alt="Productos de belleza">
+    </div>
+
+</section>
+
+<!-- CATEGORIAS -->
+<section class="seccion" id="categorias">
+
+    <div class="titulo-seccion">
+        <p>EXPLORA Y DESCUBRE</p>
+        <h2>Encuentra lo que necesitas</h2>
+    </div>
+
+    <div class="categorias">
+
+        <div class="categoria">
+            <h3>Hidratación</h3>
+            <p>Cuida y nutre tu piel diariamente.</p>
+        </div>
+
+        <div class="categoria">
+            <h3>Exfoliación</h3>
+            <p>Renueva y suaviza tu piel.</p>
+        </div>
+
+        <div class="categoria">
+            <h3>Higiene personal</h3>
+            <p>Productos para tu cuidado diario.</p>
+        </div>
+
+        <div class="categoria">
+            <h3>Cuidado corporal</h3>
+            <p>Encuentra nuevos favoritos.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTOS -->
+<section class="seccion productos" id="productos">
+
+    <div class="titulo-seccion">
+        <p>SELECCIÓN BEAUTY FINDS</p>
+        <h2>Nuestros productos destacados</h2>
+    </div>
+
+    <div class="contenedor-tarjetas">
+
+        <article class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600"
+            alt="Crema hidratante">
+
+            <div class="tarjeta-info">
+                <span class="etiqueta">Más vendido</span>
+                <h3>Crema hidratante</h3>
+                <p class="detalle">
+                    Hidratación y suavidad para tu piel.
+                </p>
+                <p class="precio">S/ 39.90</p>
+                <a href="#" class="boton-tarjeta">Ver producto</a>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=600"
+            alt="Exfoliante corporal">
+
+            <div class="tarjeta-info">
+                <span class="etiqueta">Recomendado</span>
+                <h3>Exfoliante corporal</h3>
+                <p class="detalle">
+                    Ayuda a renovar y suavizar tu piel.
+                </p>
+                <p class="precio">S/ 32.90</p>
+                <a href="#" class="boton-tarjeta">Ver producto</a>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600"
+            alt="Loción corporal">
+
+            <div class="tarjeta-info">
+                <span class="etiqueta">Nuevo</span>
+                <h3>Loción corporal</h3>
+                <p class="detalle">
+                    Frescura y cuidado para cada día.
+                </p>
+                <p class="precio">S/ 45.90</p>
+                <a href="#" class="boton-tarjeta">Ver producto</a>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600"
+            alt="Producto de cuidado personal">
+
+            <div class="tarjeta-info">
+                <span class="etiqueta">Favorito</span>
+                <h3>Kit de cuidado</h3>
+                <p class="detalle">
+                    Una combinación ideal para tu rutina.
+                </p>
+                <p class="precio">S/ 59.90</p>
+                <a href="#" class="boton-tarjeta">Ver producto</a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- GUIAS EDUCATIVAS -->
+<section class="seccion guias" id="guias">
+
+    <div class="guias-imagen">
+        <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=900"
+        alt="Rutina de cuidado personal">
+    </div>
+
+    <div class="guias-texto">
+        <p>APRENDE CON BEAUTY FINDS</p>
+
+        <h2>Conoce más sobre el cuidado de tu piel</h2>
+
+        <div class="descripcion">
+            Encuentra consejos, recomendaciones y guías
+            que te ayudarán a conocer los productos,
+            sus ingredientes y cómo incorporarlos
+            en tu rutina diaria.
+        </div>
+
+        <a href="#" class="boton">Descubrir consejos</a>
+    </div>
+
+</section>
+
+<!-- PIE DE PAGINA -->
+<footer id="contacto">
+
+    <div class="footer-contenido">
+
+        <div class="footer-columna">
+            <h3>Beauty Finds.</h3>
+            <p>Encuentra tu forma de cuidarte.</p>
+            <p>Tu espacio de cuidado personal.</p>
+        </div>
+
+        <div class="footer-columna">
+            <h3>Explora</h3>
+            <a href="#">Inicio</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#productos">Productos</a>
+            <a href="#guias">Guías de cuidado</a>
+        </div>
+
+        <div class="footer-columna">
+            <h3>Atención al cliente</h3>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Envíos y devoluciones</a>
+            <a href="#">Contáctanos</a>
+        </div>
+
+    </div>
+
+    <div class="footer-final">
+        © 2026 Beauty Finds. Todos los derechos reservados.
+    </div>
+
+</footer>
+
+</body>
+</html>
+
